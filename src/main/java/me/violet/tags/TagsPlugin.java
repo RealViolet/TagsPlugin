@@ -2,6 +2,7 @@ package me.violet.tags;
 
 import lombok.Getter;
 import me.violet.tags.commands.TagCommand;
+import me.violet.tags.listener.ChatListener;
 import me.violet.tags.mongo.MongoManager;
 import me.violet.tags.profile.Profile;
 import me.violet.tags.profile.ProfileListener;
@@ -35,6 +36,7 @@ public class TagsPlugin extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new ProfileListener(), this);
         Bukkit.getPluginManager().registerEvents(new MenuListener(this), this);
+        Bukkit.getPluginManager().registerEvents(new ChatListener(), this);
 
     }
 

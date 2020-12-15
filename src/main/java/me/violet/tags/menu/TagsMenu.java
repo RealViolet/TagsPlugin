@@ -28,17 +28,11 @@ public class TagsMenu extends Menu {
         Tag.TAG_MAP.values().forEach(tag -> buttons.put(buttons.size(), new Button() {
             @Override
             public ItemStack getItem(Player player) {
-                if (!player.hasPermission("violet.tags." + tag.getName())) {
-                    return new ItemBuilder(Material.NAME_TAG).setDisplayName(tag.getDisplayName()).setLore(
-                            CC.SMALL_CHAT_BAR
-                            , CC.RED + "You do not have permission to use the  "
-                                    + CC.WHITE + tag.getName() + CC.RED + " tag."
-                            , CC.SMALL_CHAT_BAR
-                    ).build();
-                }
                 return new ItemBuilder(Material.NAME_TAG).setDisplayName(tag.getDisplayName()).setLore(
                         CC.SMALL_CHAT_BAR
-                        , CC.GREEN + "Click to select the " + tag.getName() + " tag"
+                        , (player.hasPermission("violet.tags." + tag.getName()))
+                                ? CC.GREEN + "Click to select the " + tag.getName() + " tag"
+                                : CC.RED + "You do not have permission to use this tag."
                         , CC.SMALL_CHAT_BAR
                 ).build();
             }

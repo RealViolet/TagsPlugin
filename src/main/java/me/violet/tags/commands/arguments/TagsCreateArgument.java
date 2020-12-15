@@ -36,5 +36,6 @@ public class TagsCreateArgument extends CommandArgument {
         tag.setDisplayName(StringUtils.join(args, " ", 2, args.length));
         Tag.saveTag(tag);
         Tag.TAG_MAP.put(tag.getName(), tag);
+        sender.sendMessage(CC.GREEN + "You have created the " + tag.getName() + " tag!");
     }
 }

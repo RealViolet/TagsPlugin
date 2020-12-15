@@ -23,7 +23,7 @@ public class TagsCheckArgument extends CommandArgument {
         Player player = (Player) sender;
         Profile profile = Profile.getByPlayer(player);
         if (profile.getTag() != null)
-            player.sendMessage(ChatColor.GREEN + "Your current tag is \"" + profile.getTag().getDisplayName() + "\".");
+            player.sendMessage(ChatColor.GREEN + "Your current tag is \"" + profile.getTag().getDisplayName() + ChatColor.GREEN + "\".");
         else
             player.sendMessage(ChatColor.RED + "You do not have any tag selected!");
     }

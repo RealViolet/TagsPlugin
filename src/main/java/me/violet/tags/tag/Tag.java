@@ -49,6 +49,10 @@ public class Tag {
                 .append("displayName", this.displayName);
     }
 
+    public void delete() {
+        TagsPlugin.getInstance().getMongoManager().getTags().findOneAndDelete(Filters.eq("name", this.name));
+        TAG_MAP.remove(this.name);
+    }
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
