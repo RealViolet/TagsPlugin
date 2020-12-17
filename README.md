@@ -1,2 +1,2 @@
 # TagsPlugin
-Second time using mongo soooooo .-.
+Tags plugin that hooks into mongodb
